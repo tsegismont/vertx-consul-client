@@ -83,7 +83,7 @@ public class Watches extends ConsulTestBase {
           fail();
         } else {
           tc.assertTrue(h.failed());
-          tc.assertTrue(h.cause().getMessage().contains(CONNECTION_REFUSED));
+          tc.assertTrue(h.cause().getMessage().contains(CONNECTION_REFUSED), h.cause().getMessage());
           ticks.add(System.currentTimeMillis() - t0);
           async.countDown();
         }
